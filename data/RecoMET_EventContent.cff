@@ -1,0 +1,37 @@
+# Name:   RecoMET_EventContent.cff
+# Author: R.Cavanaugh
+# Date:   05.11.2006
+# Notes:  
+
+# Full Event content 
+block RecoMETFEVT = 
+{
+    untracked vstring outputCommands = 
+    {
+	"drop *_genCandidatesForMET_*_*",
+	"keep recoCaloMETs_*_*_*",
+	"keep recoGenMETs_*_*_*"
+    }		
+}	
+
+# RECO content
+block RecoMETRECO = 
+{
+    untracked vstring outputCommands = 
+    {
+	"drop *_genCandidatesForMET_*_*",
+	"keep recoCaloMETs_*_*_*",
+	"keep recoGenMETs_*_*_*"
+    }	
+}	
+
+# AOD content
+block RecoMETAOD = 
+{
+    untracked vstring outputCommands = 
+    {
+	"drop *_genCandidatesForMET_*_*",
+	"keep recoCaloMETs_*_*_*",
+	"keep recoGenMETs_*_*_*"
+    }
+}
