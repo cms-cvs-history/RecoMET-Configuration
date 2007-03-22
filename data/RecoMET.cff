@@ -7,4 +7,4 @@
 include "RecoMET/METProducers/data/CaloMET.cfi"
 include "RecoMET/METProducers/data/GenMET.cfi"
 
-sequence metreco = {genCandidatesForMET, genMet, met}
+sequence metreco = {met & (genParticleCandidates, ((genCandidatesForMET, genMet) & (genParticlesAllStableNoNu, genMetNoNu)))}
