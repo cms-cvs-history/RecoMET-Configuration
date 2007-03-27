@@ -5,6 +5,5 @@
 #         already written into the event.
 
 include "RecoMET/METProducers/data/CaloMET.cfi"
-include "RecoMET/METProducers/data/GenMET.cfi"
 
-sequence metreco = {met & (genParticleCandidates, ((genCandidatesForMET, genMet) & (genParticlesAllStableNoNu, genMetNoNu)))}
+sequence metreco = {met}
