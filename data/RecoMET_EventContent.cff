@@ -30,8 +30,16 @@ block RecoMETAOD =
 {
     untracked vstring outputCommands = 
     {
-	"drop *_genCandidatesForMET_*_*",
-	"keep recoCaloMETs_*_*_*",
-	"keep recoGenMETs_*_*_*"
+#	"drop *_genCandidatesForMET_*_*",
+	"keep recoCaloMETs_*_*_*"
     }
+}
+
+block RecoGenMETAOD
+{
+   untracked vstring outputCommands =
+   {
+       "drop *_genCandidatesForMET_*_*",
+       "keep recoGenMETs_*_*_*"
+   }
 }
