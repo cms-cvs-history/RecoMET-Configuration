@@ -10,6 +10,14 @@ block RecoMETFEVT =
     {
 	"drop *_genCandidatesForMET_*_*",
 	"keep recoCaloMETs_*_*_*",
+    }		
+}	
+
+block RecoGenMETFEVT = 
+{
+    untracked vstring outputCommands = 
+    {
+	"drop *_genCandidatesForMET_*_*",
 	"keep recoGenMETs_*_*_*"
     }		
 }	
@@ -21,6 +29,14 @@ block RecoMETRECO =
     {
 	"drop *_genCandidatesForMET_*_*",
 	"keep recoCaloMETs_*_*_*",
+    }	
+}	
+
+block RecoGenMETRECO = 
+{
+    untracked vstring outputCommands = 
+    {
+	"drop *_genCandidatesForMET_*_*",
 	"keep recoGenMETs_*_*_*"
     }	
 }	
