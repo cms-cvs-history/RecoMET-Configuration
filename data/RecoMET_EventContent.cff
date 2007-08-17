@@ -9,7 +9,7 @@ block RecoMETFEVT =
     untracked vstring outputCommands = 
     {
 	"drop *_genCandidatesForMET_*_*",
-	"keep recoCaloMETs_*_*_*",
+	"keep recoCaloMETs_*_*_*"
     }		
 }	
 
@@ -28,7 +28,7 @@ block RecoMETRECO =
     untracked vstring outputCommands = 
     {
 	"drop *_genCandidatesForMET_*_*",
-	"keep recoCaloMETs_*_*_*",
+	"keep recoCaloMETs_*_*_*"
     }	
 }	
 
