@@ -7,4 +7,5 @@
 include "RecoMET/METProducers/data/CaloMET.cfi"
 include "RecoMET/METProducers/data/HTMET.cfi"
 
+#sequence metreco = {met, metOpt, htMetIC5, htMetMC5}
 sequence metreco = {met, htMetIC5, htMetMC5}

@@ -1,0 +1,30 @@
+# File: CaloMETOptcaloTowers.cff
+# Author: B. Scurlock
+# Date: 02.28.2008
+#
+# Form Missing ET from optimized calotowers. The HCALRecHit thresholds 
+# are based on Feng Liu's optimization study.
+
+# IMPORTANT: this configuration assumes that RecHits are in the event
+
+ # reconstruct CaloRecHits and create calotowers here
+ #
+ 
+   include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
+   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
+   include "Geometry/CaloEventSetup/data/CaloTopology.cfi"
+   es_module = HcalTopologyIdealEP {}
+ 
+    #include "Geometry/CaloEventSetup/data/CaloTowerConstituents.cfi"
+   es_module = CaloTowerConstituentsMapBuilder {
+       untracked string MapFile="Geometry/CaloTopology/data/CaloTowerEEGeometric.map.gz"
+   }
+ 
+   include "RecoMET/METProducers/data/CaloTowersOpt.cfi"
+ 
+   module caloTowersOpt = CaloTowerCandidateCreator {
+            InputTag src = calotoweroptmaker
+            double minimumEt = -1
+            double minimumE = -1
+    }
+ sequence caloTowersMETOptRec = { calotoweroptmaker, caloTowersOpt }
