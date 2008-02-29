@@ -13,9 +13,26 @@
   include "SimGeneral/HepPDTESSource/data/pythiapdt.cfi"
   include "RecoJets/Configuration/data/GenJetParticles.cff"
 
-  module genCandidatesForMET = GenParticleCandidateSelector
+#  module genCandidatesForMET = GenParticleCandidateSelector
+#  {
+#      string src = "genParticleCandidates"
+#      bool stableOnly = true
+#      untracked bool verbose = true
+#      vstring excludeList = {"nu_e", "nu_mu", "nu_tau", "mu-",
+#                          "~chi_10", 
+#                          "~nu_eR", "~nu_muR", "~nu_tauR", 
+#			  "Graviton", "~Gravitino", 
+#                          "nu_Re", "nu_Rmu", "nu_Rtau", 
+#                          "nu*_e0", "Graviton*"
+#                         }
+#      vstring includeList = {}
+#  }
+
+
+ 
+  module genCandidatesForMET = GenJetParticleRefSelector 
   {
-      string src = "genParticleCandidates"
+      InputTag src = genParticles
       bool stableOnly = true
       untracked bool verbose = true
       vstring excludeList = {"nu_e", "nu_mu", "nu_tau", "mu-",
@@ -28,4 +45,4 @@
       vstring includeList = {}
   }
 
-sequence genMETParticles = { genParticleCandidates, genParticlesAllStableNoNuBSM & genCandidatesForMET }
+sequence genMETParticles = { genParticlesAllStableNoNuBSM & genCandidatesForMET }
