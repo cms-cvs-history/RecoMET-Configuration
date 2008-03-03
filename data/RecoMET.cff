@@ -6,6 +6,7 @@
 
 include "RecoMET/METProducers/data/CaloMET.cfi"
 include "RecoMET/METProducers/data/HTMET.cfi"
+include "RecoMET/Configuration/data/CaloTowersOptForMET.cff"
 
-#sequence metreco = {met, metOpt, htMetIC5, htMetMC5}
-sequence metreco = {met, htMetIC5, htMetMC5}
+#sequence metreco = {met, htMetIC5, htMetMC5}
+sequence metreco = {caloTowersMETOptRec, metOpt, met, metNoHF, metOptNoHF, htMetSC5, htMetSC7, htMetKT4, htMetKT6}

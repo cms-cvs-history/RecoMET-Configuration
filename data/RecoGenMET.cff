@@ -6,10 +6,11 @@
 
 include "RecoMET/METProducers/data/genMet.cfi"
 include "RecoMET/METProducers/data/genMetNoNuBSM.cfi"
+include "RecoMET/METProducers/data/genMetFromGenJets.cfi"
 
 #
 # ShR 27 Mar 2007: genJetParticles from "RecoJets/Configuration/data/GenJetParticles.cff"
 # must be executed before this sequence in order to work since genMetNoNugenMetNoNu
 # needs genParticlesAllStableNoNu from that sequence
 # can't append them here explicitly because of scheduling problem
-sequence recoGenMET = { genMet & genMetNoNuBSM }
+sequence recoGenMET = { genMet & genMetNoNuBSM , genMetIC5GenJetsPt10, genMetIC5GenJetsNoNuBSM  }
