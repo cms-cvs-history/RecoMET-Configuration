@@ -8,7 +8,8 @@ block RecoMETFEVT =
 {
     untracked vstring outputCommands = 
     {
-	"keep recoCaloMETs_*_*_*"
+	"keep recoCaloMETs_*_*_*",
+	"keep recoMETs_*_*_*"
     }		
 }	
 
@@ -25,7 +26,8 @@ block RecoMETRECO =
 {
     untracked vstring outputCommands = 
     {
-	"keep recoCaloMETs_*_*_*"
+	"keep recoCaloMETs_*_*_*",
+	"keep recoMETs_*_*_*"
     }	
 }	
 
@@ -42,7 +44,8 @@ block RecoMETAOD =
 {
     untracked vstring outputCommands = 
     {
-	"keep recoCaloMETs_*_*_*"
+	"keep recoCaloMETs_*_*_*",
+	"keep recoMETs_*_*_*"
     }
 }
 
