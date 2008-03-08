@@ -45,4 +45,4 @@
       vstring includeList = {}
   }
 
-sequence genMETParticles = { genParticlesAllStableNoNuBSM & genCandidatesForMET }
+sequence genMETParticles = { genCandidatesForMET }

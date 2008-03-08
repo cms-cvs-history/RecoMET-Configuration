@@ -13,4 +13,4 @@ include "RecoMET/METProducers/data/genMetFromGenJets.cfi"
 # must be executed before this sequence in order to work since genMetNoNugenMetNoNu
 # needs genParticlesAllStableNoNu from that sequence
 # can't append them here explicitly because of scheduling problem
-sequence recoGenMET = { genMet & genMetNoNuBSM , genMetIC5GenJetsPt10, genMetIC5GenJetsNoNuBSM  }
+sequence recoGenMET = { genMet & genMetNoNuBSM , genMetIC5GenJets}
