@@ -12,13 +12,19 @@
   include "RecoJets/Configuration/data/CaloTowersES.cfi"
   include "RecoMET/METProducers/data/CaloTowersOpt.cfi"
 
- # module caloTowersOpt = CaloTowerCandidateCreator {
- #          InputTag src = calotoweroptmaker
- #          double minimumEt = -1
- #           double minimumE = -1
- #  }
- #sequence caloTowersMETOptRec = { calotoweroptmaker, caloTowersOpt }
+ module caloTowersForMET = CaloTowerCandidateCreator {
+           InputTag src = towerMaker
+           double minimumEt = -1
+            double minimumE = -1
+   }
 
-sequence caloTowersMETOptRec = { calotoweroptmaker }
+  module caloTowersOpt = CaloTowerCandidateCreator {
+           InputTag src = calotoweroptmaker
+           double minimumEt = -1
+            double minimumE = -1
+   }
+ sequence caloTowersMETOptRec = { calotoweroptmaker, caloTowersOpt, caloTowersForMET }
+
+#sequence caloTowersMETOptRec = { calotoweroptmaker }
 
 
