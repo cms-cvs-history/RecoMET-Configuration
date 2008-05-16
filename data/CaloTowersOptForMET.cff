@@ -23,8 +23,8 @@
            double minimumEt = -1
             double minimumE = -1
    }
- sequence caloTowersMETOptRec = { calotoweroptmaker, caloTowersOpt, caloTowersForMET }
+# sequence caloTowersMETOptRec = { calotoweroptmaker, caloTowersOpt, caloTowersForMET }
 
-#sequence caloTowersMETOptRec = { calotoweroptmaker }
+sequence caloTowersMETOptRec = { calotoweroptmaker }
 
 
