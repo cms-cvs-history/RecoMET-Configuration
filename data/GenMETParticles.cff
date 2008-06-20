@@ -1,4 +1,4 @@
-# File: GenMET.cff
+# File: GenMETParticles.cff
 # Author: R. Cavanaugh
 # Date: 08.08.2006
 #
@@ -9,40 +9,48 @@
 # F.R. Mar. 22, 2007 IMPORTANT: this configuration assumes that some
 #                    GenParticle collections are made via GenJet's configuration
 
+
+#R.C.R June 20, 2008 Changed from GenJetParticleRefSelector to InputGenJetsParticleSelector
+#to resolve bug in particle lists for genMet and genMetNoNuBSM 
+
   include "PhysicsTools/HepMCCandAlgos/data/genParticleCandidatesFast.cfi"
   include "SimGeneral/HepPDTESSource/data/pythiapdt.cfi"
   include "RecoJets/Configuration/data/GenJetParticles.cff"
 
-#  module genCandidatesForMET = GenParticleCandidateSelector
-#  {
-#      string src = "genParticleCandidates"
-#      bool stableOnly = true
-#      untracked bool verbose = true
-#      vstring excludeList = {"nu_e", "nu_mu", "nu_tau", "mu-",
-#                          "~chi_10", 
-#                          "~nu_eR", "~nu_muR", "~nu_tauR", 
-#			  "Graviton", "~Gravitino", 
-#                          "nu_Re", "nu_Rmu", "nu_Rtau", 
-#                          "nu*_e0", "Graviton*"
-#                         }
-#      vstring includeList = {}
-#  }
+module genCandidatesForMET = InputGenJetsParticleSelector {
+
+               InputTag src = "genParticles"
+               bool partonicFinalState = false  
+               bool excludeResonances = false  
+               vuint32 excludeFromResonancePids = {}
+               bool tausAsJets = false
+               vuint32 ignoreParticleIDs = {   1000022, 2000012, 2000014,
+                                               2000016, 1000039, 5000039,
+                                               4000012, 9900012, 9900014,
+                                               9900016, 39, 12, 13, 14, 16
+                                           }
+        }
+
+module genCandidatesForMETNoNuBSM = InputGenJetsParticleSelector {
 
 
- 
-  module genCandidatesForMET = GenJetParticleRefSelector 
-  {
-      InputTag src = genParticles
-      bool stableOnly = true
-      untracked bool verbose = true
-      vstring excludeList = {"nu_e", "nu_mu", "nu_tau", "mu-",
-                          "~chi_10", 
-                          "~nu_eR", "~nu_muR", "~nu_tauR", 
-			  "Graviton", "~Gravitino", 
-                          "nu_Re", "nu_Rmu", "nu_Rtau", 
-                          "nu*_e0", "Graviton*"
-                         }
-      vstring includeList = {}
-  }
+               InputTag src = "genParticles"
+               bool partonicFinalState = false  
+               bool excludeResonances = true
+               vuint32 excludeFromResonancePids = {12, 13, 14, 16}
+               bool tausAsJets = false
+               vuint32 ignoreParticleIDs = {   1000022, 2000012, 2000014,
+                                               2000016, 1000039, 5000039,
+                                               4000012, 9900012, 9900014,
+                                               9900016, 39
+                                           }
 
-sequence genMETParticles = { genCandidatesForMET }
+
+
+}
+
+
+
+
+sequence genMETParticles = { genCandidatesForMET, genCandidatesForMETNoNuBSM }
+
