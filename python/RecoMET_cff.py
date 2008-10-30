@@ -13,6 +13,6 @@ from RecoMET.METProducers.HTMET_cfi import *
 metreco = cms.Sequence(
     met+metNoHF+metHO+metNoHFHO+
     calotoweroptmaker+metOpt+metOptNoHF+calotoweroptmakerWithHO+metOptHO+metOptNoHFHO+
-    htMetSC5+htMetSC7+htMetKT4+htMetKT6+htMetIC5+
+    htMetSC5+htMetSC7+htMetKT4+htMetKT6+htMetIC5
     )
 
