@@ -7,8 +7,9 @@ import FWCore.ParameterSet.Config as cms
 # Full Event content 
 RecoMETFEVT = cms.PSet(
     outputCommands = cms.untracked.vstring('keep recoCaloMETs_*_*_*', 
-        'keep recoPFMETs_*_*_*',
-        'keep recoMETs_*_*_*')
+                                           'keep recoMuonMETCorrectionDataedmValueMap_*_*_*',
+                                           'keep recoPFMETs_*_*_*',
+                                           'keep recoMETs_*_*_*')
 )
 RecoGenMETFEVT = cms.PSet(
     outputCommands = cms.untracked.vstring('keep recoGenMETs_*_*_*')
@@ -20,13 +21,15 @@ RecoMETRECO = cms.PSet(
         'keep recoMETs_*_*_*')
 )
 RecoGenMETRECO = cms.PSet(
-    outputCommands = cms.untracked.vstring('keep recoGenMETs_*_*_*')
+    outputCommands = cms.untracked.vstring('keep recoGenMETs_*_*_*',
+                                           'keep recoMuonMETCorrectionDataedmValueMap_*_*_*')
 )
 # AOD content
 RecoMETAOD = cms.PSet(
     outputCommands = cms.untracked.vstring('keep recoCaloMETs_*_*_*', 
-        'keep recoPFMETs_*_*_*',
-        'keep recoMETs_*_*_*')
+                                           'keep recoMuonMETCorrectionDataedmValueMap_*_*_*',
+                                           'keep recoPFMETs_*_*_*',
+                                           'keep recoMETs_*_*_*')
 )
 RecoGenMETAOD = cms.PSet(
     outputCommands = cms.untracked.vstring('keep recoGenMETs_*_*_*')
