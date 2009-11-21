@@ -10,7 +10,7 @@ from RecoMET.METProducers.CSCHaloData_cfi import *
 from RecoMET.METProducers.EcalHaloData_cfi import *
 from RecoMET.METProducers.HcalHaloData_cfi import *
 from RecoMET.METProducers.GlobalHaloData_cfi import *
+from RecoMET.METProducers.BeamHaloSummary_cfi import * 
 
 
-
-BeamHaloId = cms.Sequence(CSCHaloData*EcalHaloData*HcalHaloData*GlobalHaloData)
+BeamHaloId = cms.Sequence(CSCHaloData*EcalHaloData*HcalHaloData*GlobalHaloData*BeamHaloSummary)
